@@ -8,7 +8,7 @@ PORT = os.getenv("PORT")
 
 
 
-
+print(f"Starting server on port {PORT}")
 
 
 if __name__ == "__main__":
