@@ -30,5 +30,3 @@ jobs:
             # Wait a moment for containers to start
             sudo docker-compose up -d --build
 
-            # Show running containers
-            sudo docker logs -f contact-app-python
