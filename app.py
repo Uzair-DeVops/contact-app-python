@@ -9,10 +9,12 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.on_event("startup")
 async def startup_event():
+    print("Starting up...")
     await connect_database(app)
 
 @app.on_event("shutdown")
 async def shutdown_event():
+    print("Shutting down...")
     await close_database(app)
 
 app.include_router(contact_router)
