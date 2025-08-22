@@ -20,13 +20,8 @@ jobs:
             # Navigate to project directory
             cd /home/ubuntu/contact-app-python
 
-
             # Stash any local changes and pull latest changes from the same branch that triggered the workflow
             git pull
 
-            # down containers to pick up code changes
-            sudo docker-compose down
-
-            # Wait a moment for containers to start
-            sudo docker-compose up -d --build
-
+            # Restart containers to pick up code changes (no rebuild needed with volume mounting)
+            sudo docker-compose restart
